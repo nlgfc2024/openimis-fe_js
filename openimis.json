@@ -23,6 +23,14 @@
       ],
       "intl": "fr-FR",
       "fileNames": "fr"
+    },
+    {
+      "languages": [
+        "es",
+        "es-ES"
+      ],
+      "intl": "es-ES",
+      "fileNames": "es"
     }
   ],
   "modules": [
@@ -65,6 +73,10 @@
         {
         "name": "LanguagePtBrModule",
         "npm": "@openimis/fe-language_pt-br@git+https://github.com/openimis/openimis-fe-language_pt_BR_js.git#main"
+    },
+        {
+        "name": "LanguageEsModule",
+        "npm": "@openimis/fe-language_es@git+https://github.com/filhocf/openimis-fe-language_es_js.git#main"
     },
         {
         "name": "LanguageFrModule",
