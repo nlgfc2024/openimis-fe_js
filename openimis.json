@@ -76,7 +76,7 @@
     },
         {
         "name": "LanguageEsModule",
-        "npm": "@openimis/fe-language_es@git+https://github.com/openimis/openimis-fe-language_es_js.git#main"
+        "npm": "@openimis/fe-language_es_js@git+https://github.com/openimis/openimis-fe-language_es_js.git#main"
     },
         {
         "name": "LanguageFrModule",
