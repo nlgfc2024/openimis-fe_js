@@ -10,6 +10,31 @@ const theme = createTheme({
         },
       },
     },
+    MuiButton: {
+      root: {
+        color: '#ffffff',
+        backgroundColor: '#018399',
+        borderRadius: '8px',
+        marginRight: '5px',
+        '&:hover': {
+          backgroundColor: alpha('#018399', 0.9),
+        },
+      },
+    },
+    MuiMenuItem: {
+      root: {
+        color: '#ffffff',
+        backgroundColor: '#018399',
+        borderRadius: '8px',
+        marginRight: '5px',
+        '&:hover': {
+          backgroundColor: alpha('#018399', 0.9),
+        },
+        '&.Mui-selected': {
+          backgroundColor: alpha('#018399', 0.5),
+        },
+      },
+    },
   },
   palette: {
     primary: { main: "#018399" },
