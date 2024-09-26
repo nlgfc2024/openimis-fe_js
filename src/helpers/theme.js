@@ -12,12 +12,12 @@ const theme = createTheme({
     },
   },
   palette: {
-    primary: { main: "#006273" },
+    primary: { main: "#018399" },
     secondary: { main: "#fff" },
     error: { main: "#801a00" },
     text: {
-      primary: "#006273",
-      secondary: "#006273", // HACK FOR material-table hardcoded toolbar!,
+      primary: "#018399",
+      secondary: "#018399", // HACK FOR material-table hardcoded toolbar!,
       second: "#fff",
       error: "#801a00",
     },
@@ -55,7 +55,7 @@ const theme = createTheme({
       width: 300,
       fontSize: 18,
       fontWeight: 400,
-      backgroundColor:"#006273",
+      backgroundColor:"#018399",
       textColor: "#fff",
     },
     appBar: {
@@ -71,20 +71,20 @@ const theme = createTheme({
   paper: {
     paper: {
       margin: 10,
-      backgroundColor: "#dbeef0",
+      backgroundColor: "#ebfcff",
     },
     header: {
-      color: "#006273",
-      backgroundColor: "#b7d4d8",
+      color: "#018399",
+      backgroundColor: "#bce4eb",
     },
     message: {
-      backgroundColor: "#b7d4d8",
+      backgroundColor: "#bce4eb",
     },
     title: {
       padding: 10,
       fontSize: 24,
-      color: "#006273",
-      backgroundColor: "#b7d4d8",
+      color: "#018399",
+      backgroundColor: "#bce4eb",
     },
     action: {
       padding: 5,
@@ -95,7 +95,7 @@ const theme = createTheme({
     },
     body: {
       marginTop: 10,
-      backgroundColor: "#dbeef0",
+      backgroundColor: "#ebfcff",
     },
     item: {
       padding: 10,
@@ -105,17 +105,17 @@ const theme = createTheme({
     title: {
       padding: 10,
       fontWeight: 500,
-      color: "#006273",
-      backgroundColor: "#b7d4d8",
+      color: "#018399",
+      backgroundColor: "#bce4eb",
     },
     header: {
-      color: "#006273",
+      color: "#018399",
     },
     headerAction: {
       padding: 5,
     },
     row: {
-      color: "#006273",
+      color: "#018399",
       align: "center",
       "&:hover": {
         background: "rgba(0, 0, 0, 0.12) !important",
@@ -149,10 +149,10 @@ const theme = createTheme({
       align: "center",
     },
     footer: {
-      color: "#006273",
+      color: "#018399",
     },
     pager: {
-      color: "#006273",
+      color: "#018399",
     },
   },
   form: {
@@ -160,13 +160,13 @@ const theme = createTheme({
   },
   formTable: {
     table: {
-      color: "#006273",
+      color: "#018399",
     },
     actions: {
-      color: "#006273",
+      color: "#018399",
     },
     header: {
-      color: "#006273",
+      color: "#018399",
       align: "center",
     },
   },
@@ -179,12 +179,12 @@ const theme = createTheme({
       padding: 0,
     },
     primaryButton: {
-      backgroundColor: "#006273",
+      backgroundColor: "#018399",
       color: "#fff",
       fontWeight: "bold",
       "&:hover": {
-        backgroundColor: alpha("#006273", 0.5),
-        color: "#006273",
+        backgroundColor: alpha("#018399", 0.5),
+        color: "#018399",
       },
     },
     secondaryButton: {},
