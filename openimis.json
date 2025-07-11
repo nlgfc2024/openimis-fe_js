@@ -28,7 +28,7 @@
         },
         {
             "name": "SocialProtectionModule",
-            "npm": "@openimis/fe-social_protection@https://github.com/openimis/openimis-fe-social_protection_js#develop"
+            "npm": "@openimis/fe-social_protection@https://github.com/openimis/openimis-fe-social_protection_js#feature/project-beneficiaries"
         },
         {
             "name": "OpenSearchReportsModule",
