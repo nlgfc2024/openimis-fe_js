@@ -18,8 +18,8 @@ USER node
 ENV GENERATE_SOURCEMAP=true
 ENV NODE_ENV=production
 RUN npm run load-config
-RUN npm install 
-RUN npm run build
+RUN yarn install
+RUN yarn build
 ### NGINX
 FROM nginx:latest
 #COPY APP
