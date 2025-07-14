@@ -1,4 +1,4 @@
-FROM node:16 AS dev-stage
+FROM node:24 AS dev-stage
 RUN mkdir /app
 COPY ./ /app
 WORKDIR /app
