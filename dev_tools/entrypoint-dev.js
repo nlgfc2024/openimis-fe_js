@@ -102,10 +102,10 @@ function prepareModuleForLocalDevelopment(modulePath, moduleName, npmPackageName
   shell.cd(modulePath);
   console.log(`Preparing ${moduleName} for local development...`);
 
-  shell.exec(`npm unlink ${npmPackageName}`, { silent: true });
-  shell.exec("npm install --legacy-peer-deps --include dev");
+  shell.exec(`yarn unlink ${npmPackageName}`, { silent: true });
+  shell.exec("yarn install");
   //shell.exec("npm build");
-  shell.exec("npm link");
+  shell.exec("yarn link");
 
   const modulePackageJson = path.join("package.json");
   let packageVersion;

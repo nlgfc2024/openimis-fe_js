@@ -1,14 +1,20 @@
 FROM node:24 AS dev-stage
+
 RUN mkdir /app
 COPY ./ /app
 WORKDIR /app
+
 RUN chown node /app -R
-RUN npm install --global serve shelljs
+
+RUN yarn global add serve shelljs
+
 RUN apt-get update && apt-get install -y nano openssl software-properties-common 
 RUN openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/privkey.pem -out /etc/ssl/private/fullchain.pem -subj "/C=DE/ST=_/L=_/O=_/OU=_/CN=localhost"
+
 ARG OPENIMIS_CONF_JSON
 ENV OPENIMIS_CONF_JSON=${OPENIMIS_CONF_JSON}
 ENV NODE_ENV=development
+
 USER node
 ENTRYPOINT ["/bin/bash","/app/script/entrypoint-dev.sh"]
 
@@ -17,9 +23,11 @@ USER node
 
 ENV GENERATE_SOURCEMAP=true
 ENV NODE_ENV=production
-RUN npm run load-config
-RUN npm install --legacy-peer-deps
-RUN npm run build
+
+RUN yarn run load-config
+RUN yarn install
+RUN yarn run build
+
 ### NGINX
 FROM nginx:latest
 #COPY APP
