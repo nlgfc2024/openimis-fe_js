@@ -58,7 +58,7 @@
     },
     {
       "name": "GrievanceSocialProtectionModule",
-      "npm": "@openimis/fe-grievance_social_protection@https://github.com/openimis/openimis-fe-grievance_social_protection_js#develop"
+      "npm": "@openimis/fe-grievance_social_protection@https://github.com/openimis-wb/openimis-fe-grievance_social_protection_js#feature/optional-category-flags"
     },
     {
       "name": "OpenSearchReportsModule",
