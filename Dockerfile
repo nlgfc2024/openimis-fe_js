@@ -1,4 +1,4 @@
-FROM node:16 AS dev-stage
+FROM node:24 AS dev-stage
 RUN mkdir /app
 COPY ./ /app
 WORKDIR /app
@@ -17,9 +17,10 @@ USER node
 
 ENV GENERATE_SOURCEMAP=true
 ENV NODE_ENV=production
+ENV NODE_OPTIONS=--openssl-legacy-provider
 RUN npm run load-config
-RUN yarn install
-RUN yarn build
+RUN npm install --legacy-peer-deps
+RUN npm run build
 ### NGINX
 FROM nginx:latest
 #COPY APP
