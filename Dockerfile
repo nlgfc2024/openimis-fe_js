@@ -17,6 +17,7 @@ USER node
 
 ENV GENERATE_SOURCEMAP=true
 ENV NODE_ENV=production
+ENV NODE_OPTIONS=--openssl-legacy-provider
 RUN npm run load-config
 RUN npm install --legacy-peer-deps
 RUN npm run build
