@@ -28,7 +28,7 @@
         },
         {
             "name": "SocialProtectionModule",
-            "npm": "@openimis/fe-social_protection@https://github.com/nlgfc2024/openimis-fe-social_protection_js#mw-changes"
+            "npm": "@openimis/fe-social_protection@https://github.com/openimis/openimis-fe-social_protection_js#release/26.04"
         },
         {
             "name": "OpenSearchReportsModule",
@@ -40,7 +40,7 @@
         },
         {
             "name": "LocationModule",
-            "npm": "@openimis/fe-location@https://github.com/nlgfc2024/openimis-fe-location_js#mw-changes"
+            "npm": "@openimis/fe-location@https://github.com/openimis/openimis-fe-location_js#release/26.04"
         },
         {
             "name": "InsureeModule",
@@ -84,7 +84,7 @@
         },
         {
             "name": "AdminModule",
-            "npm": "@openimis/fe-admin@https://github.com/nlgfc2024/openimis-fe-admin_js#mw-changes"
+            "npm": "@openimis/fe-admin@https://github.com/openimis/openimis-fe-admin_js#release/26.04"
         },
         {
             "name": "ToolsModule",
