@@ -32,7 +32,7 @@
         },
         {
             "name": "ProjectSocialProtectionModule",
-            "npm": "@openimis/fe-project_social_protection@https://github.com/nlgfc2024/openimis-fe-project_social_protection_js#sprint/2026-07/malawi"
+            "npm": "@openimis/fe-project_social_protection@https://github.com/nlgfc2024/openimis-fe-project_social_protection_js#sprint/2026-07"
         },
         {
             "name": "OpenSearchReportsModule",
