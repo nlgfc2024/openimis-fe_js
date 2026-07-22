@@ -144,11 +144,15 @@
         },
         {
             "name": "DeduplicationModule",
-            "npm": "@openimis/fe-deduplication@https://github.com/openimis/openimis-fe-deduplication_js#release/26.04"
+            "npm": "@openimis/fe-deduplication@https://github.com/nlgfc2024/openimis-fe-deduplication_js#sprint/2026-07"
         },
         {
             "name": "PayrollModule",
             "npm": "@openimis/fe-payroll@https://github.com/openimis/openimis-fe-payroll_js#release/26.04"
+        },
+        {
+            "name": "MsrEtlModule",
+            "npm": "@openimis/fe-msr_etl@https://github.com/nlgfc2024/openimis-fe-msr_etl_js#sprint/2026-07"
         },
         {
             "name": "CoreMISLanguageModule",
