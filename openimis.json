@@ -132,7 +132,7 @@
         },
         {
             "name": "GrievanceSocialProtectionModule",
-            "npm": "@openimis/fe-grievance_social_protection@https://github.com/openimis/openimis-fe-grievance_social_protection_js#release/26.04"
+            "npm": "@openimis/fe-grievance_social_protection@https://github.com/nlgfc2024/openimis-fe-grievance_social_protection_js#sprint/2026-07"
         },
         {
             "name": "LanguageFrModule",
