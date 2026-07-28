@@ -1,4 +1,4 @@
-FROM node:20 AS dev-stage
+FROM node:20.20.2 AS dev-stage
 
 # Install system dependencies
 RUN apt-get update && apt-get install -y nano openssl software-properties-common
@@ -33,7 +33,6 @@ USER node
 ENV GENERATE_SOURCEMAP=true
 ENV NODE_ENV=production
 RUN npm config set prefix /home/node/.npm-global
-RUN npm install -g npm@latest
 
 FROM base AS build-stage
 RUN npm run load-config
