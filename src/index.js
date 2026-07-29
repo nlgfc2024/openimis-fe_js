@@ -52,6 +52,20 @@ const loadConfiguration = async () => {
   }
 };
 
+const setConfiguredFavicon = (config) => {
+  const favicon = config?.["fe-core"]?.logo?.value;
+  if (favicon?.startsWith("data:image/png;base64,")) {
+    document.querySelector('link[rel="icon"]')?.setAttribute("href", favicon);
+  }
+};
+
+const setConfiguredAppName = (config) => {
+  const appName = config?.["fe-core"]?.appName;
+  if (appName) {
+    document.title = appName;
+  }
+};
+
 const AppContainer = () => {
   const [appState, setAppState] = React.useState({ isLoading: true, config: undefined, error: null });
   const localesManager = new LocalesManager();
@@ -59,6 +73,8 @@ const AppContainer = () => {
   useEffect(() => {
     loadConfiguration().then(
       (config) => {
+        setConfiguredFavicon(config);
+        setConfiguredAppName(config);
         setAppState({
           error: null,
           isLoading: false,
@@ -78,6 +94,8 @@ const AppContainer = () => {
   const themeColor = appState?.config?.["fe-core"]?.theme;
   const dynamicTheme = createAppTheme(themeColor || {});
   const logo = getConfiguredLogo(appState.config);
+  const appName = appState?.config?.["fe-core"]?.appName;
+  const messages = appName ? { ...messages_ref, appName } : messages_ref;
   const disableTextLogo = appState?.config?.["fe-core"]?.logo?.disableTextLogo || false;
 
   if (appState.isLoading) {
@@ -112,7 +130,7 @@ const AppContainer = () => {
               <App
                 basename={process.env.PUBLIC_URL}
                 localesManager={localesManager}
-                messages={messages_ref}
+                messages={messages}
                 logo={logo}
                 disableTextLogo={disableTextLogo}
               />
