@@ -44,11 +44,11 @@
         },
         {
             "name": "LocationModule",
-            "npm": "@openimis/fe-location@https://github.com/nlgfc2024/openimis-fe-location_js#mw/develop"
+            "npm": "@openimis/fe-location@https://github.com/nlgfc2024/openimis-fe-location_js#jobs-now/develop"
         },
         {
             "name": "HouseholdValidationModule",
-            "npm": "@openimis/fe-household_validation@https://github.com/nlgfc2024/openimis-fe-household_validation_js#mw/develop"
+            "npm": "@openimis/fe-household_validation@https://github.com/nlgfc2024/openimis-fe-household_validation_js#jobs-now/develop"
         },
         {
             "name": "InsureeModule",
@@ -124,7 +124,7 @@
         },
         {
             "name": "TasksManagementModule",
-            "npm": "@openimis/fe-tasks_management@https://github.com/openimis/openimis-fe-tasks_management_js#release/26.04"
+            "npm": "@openimis/fe-tasks_management@https://github.com/nlgfc2024/openimis-fe-tasks_management_js#mw/develop"
         },
         {
             "name": "InvoiceModule",
@@ -156,7 +156,7 @@
         },
         {
             "name": "CoreMISLanguageModule",
-            "npm": "@openimis/fe-coremis_language_pack@https://github.com/nlgfc2024/openimis-fe-coremis_language_pack_js#mw/develop"
+            "npm": "@openimis/fe-coremis_language_pack@https://github.com/nlgfc2024/openimis-fe-coremis_language_pack_js#jobs-now/develop"
         }
     ]
 }
