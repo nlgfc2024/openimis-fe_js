@@ -112,11 +112,11 @@
         },
         {
             "name": "ContributionPlanModule",
-            "npm": "@openimis/fe-contribution_plan@https://github.com/openimis/openimis-fe-contribution_plan_js#release/26.04"
+            "npm": "@openimis/fe-contribution_plan@https://github.com/nlgfc2024/openimis-fe-contribution_plan_js#mw/develop"
         },
         {
             "name": "PaymentCycleModule",
-            "npm": "@openimis/fe-payment_cycle@https://github.com/openimis/openimis-fe-payment_cycle_js#release/26.04"
+            "npm": "@openimis/fe-payment_cycle@https://github.com/nlgfc2024/openimis-fe-payment_cycle_js#mw/develop"
         },
         {
             "name": "ContractModule",
@@ -124,7 +124,7 @@
         },
         {
             "name": "TasksManagementModule",
-            "npm": "@openimis/fe-tasks_management@https://github.com/openimis/openimis-fe-tasks_management_js#release/26.04"
+            "npm": "@openimis/fe-tasks_management@https://github.com/nlgfc2024/openimis-fe-tasks_management_js#mw/develop"
         },
         {
             "name": "InvoiceModule",
