@@ -20,19 +20,19 @@
     "modules": [
         {
             "name": "CoreModule",
-            "npm": "@openimis/fe-core@https://github.com/nlgfc2024/openimis-fe-core_js#mw/develop"
+            "npm": "@openimis/fe-core@https://github.com/nlgfc2024/openimis-fe-core_js#26.10-uat.1"
         },
         {
             "name": "IndividualModule",
-            "npm": "@openimis/fe-individual@https://github.com/nlgfc2024/openimis-fe-individual_js#mw/develop"
+            "npm": "@openimis/fe-individual@https://github.com/nlgfc2024/openimis-fe-individual_js#26.10-uat.1"
         },
         {
             "name": "SocialProtectionModule",
-            "npm": "@openimis/fe-social_protection@https://github.com/nlgfc2024/openimis-fe-social_protection_js#mw/develop"
+            "npm": "@openimis/fe-social_protection@https://github.com/nlgfc2024/openimis-fe-social_protection_js#26.10-uat.1"
         },
         {
             "name": "ProjectSocialProtectionModule",
-            "npm": "@openimis/fe-project_social_protection@https://github.com/nlgfc2024/openimis-fe-project_social_protection_js#mw/develop"
+            "npm": "@openimis/fe-project_social_protection@https://github.com/nlgfc2024/openimis-fe-project_social_protection_js#26.10-uat.1"
         },
         {
             "name": "OpenSearchReportsModule",
@@ -44,11 +44,11 @@
         },
         {
             "name": "LocationModule",
-            "npm": "@openimis/fe-location@https://github.com/nlgfc2024/openimis-fe-location_js#mw/develop"
+            "npm": "@openimis/fe-location@https://github.com/nlgfc2024/openimis-fe-location_js#26.10-uat.1"
         },
         {
             "name": "HouseholdValidationModule",
-            "npm": "@openimis/fe-household_validation@https://github.com/nlgfc2024/openimis-fe-household_validation_js#mw/develop"
+            "npm": "@openimis/fe-household_validation@https://github.com/nlgfc2024/openimis-fe-household_validation_js#26.10-uat.1"
         },
         {
             "name": "InsureeModule",
@@ -92,7 +92,7 @@
         },
         {
             "name": "AdminModule",
-            "npm": "@openimis/fe-admin@https://github.com/nlgfc2024/openimis-fe-admin_js#mw/develop"
+            "npm": "@openimis/fe-admin@https://github.com/nlgfc2024/openimis-fe-admin_js#26.10-uat.1"
         },
         {
             "name": "ToolsModule",
@@ -112,11 +112,11 @@
         },
         {
             "name": "ContributionPlanModule",
-            "npm": "@openimis/fe-contribution_plan@https://github.com/nlgfc2024/openimis-fe-contribution_plan_js#mw/develop"
+            "npm": "@openimis/fe-contribution_plan@https://github.com/nlgfc2024/openimis-fe-contribution_plan_js#26.10-uat.1"
         },
         {
             "name": "PaymentCycleModule",
-            "npm": "@openimis/fe-payment_cycle@https://github.com/nlgfc2024/openimis-fe-payment_cycle_js#mw/develop"
+            "npm": "@openimis/fe-payment_cycle@https://github.com/nlgfc2024/openimis-fe-payment_cycle_js#26.10-uat.1"
         },
         {
             "name": "ContractModule",
@@ -124,7 +124,7 @@
         },
         {
             "name": "TasksManagementModule",
-            "npm": "@openimis/fe-tasks_management@https://github.com/nlgfc2024/openimis-fe-tasks_management_js#mw/develop"
+            "npm": "@openimis/fe-tasks_management@https://github.com/nlgfc2024/openimis-fe-tasks_management_js#26.10-uat.1"
         },
         {
             "name": "InvoiceModule",
@@ -132,7 +132,7 @@
         },
         {
             "name": "GrievanceSocialProtectionModule",
-            "npm": "@openimis/fe-grievance_social_protection@https://github.com/nlgfc2024/openimis-fe-grievance_social_protection_js#mw/develop"
+            "npm": "@openimis/fe-grievance_social_protection@https://github.com/nlgfc2024/openimis-fe-grievance_social_protection_js#26.10-uat.1"
         },
         {
             "name": "LanguageFrModule",
@@ -144,19 +144,19 @@
         },
         {
             "name": "DeduplicationModule",
-            "npm": "@openimis/fe-deduplication@https://github.com/nlgfc2024/openimis-fe-deduplication_js#mw/develop"
+            "npm": "@openimis/fe-deduplication@https://github.com/nlgfc2024/openimis-fe-deduplication_js#26.10-uat.1"
         },
         {
             "name": "PayrollModule",
-            "npm": "@openimis/fe-payroll@https://github.com/nlgfc2024/openimis-fe-payroll_js#mw/develop"
+            "npm": "@openimis/fe-payroll@https://github.com/nlgfc2024/openimis-fe-payroll_js#26.10-uat.1"
         },
         {
             "name": "MsrEtlModule",
-            "npm": "@openimis/fe-msr_etl@https://github.com/nlgfc2024/openimis-fe-msr_etl_js#mw/develop"
+            "npm": "@openimis/fe-msr_etl@https://github.com/nlgfc2024/openimis-fe-msr_etl_js#26.10-uat.1"
         },
         {
             "name": "CoreMISLanguageModule",
-            "npm": "@openimis/fe-coremis_language_pack@https://github.com/nlgfc2024/openimis-fe-coremis_language_pack_js#mw/develop"
+            "npm": "@openimis/fe-coremis_language_pack@https://github.com/nlgfc2024/openimis-fe-coremis_language_pack_js#26.10-uat.1"
         }
     ]
 }
