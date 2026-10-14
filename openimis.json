@@ -44,11 +44,11 @@
         },
         {
             "name": "LocationModule",
-            "npm": "@openimis/fe-location@https://github.com/nlgfc2024/openimis-fe-location_js#jobs-now/develop"
+            "npm": "@openimis/fe-location@https://github.com/nlgfc2024/openimis-fe-location_js#mw/develop"
         },
         {
             "name": "HouseholdValidationModule",
-            "npm": "@openimis/fe-household_validation@https://github.com/nlgfc2024/openimis-fe-household_validation_js#jobs-now/develop"
+            "npm": "@openimis/fe-household_validation@https://github.com/nlgfc2024/openimis-fe-household_validation_js#mw/develop"
         },
         {
             "name": "InsureeModule",
