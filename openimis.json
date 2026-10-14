@@ -92,7 +92,7 @@
         },
         {
             "name": "AdminModule",
-            "npm": "@openimis/fe-admin@https://github.com/openimis/openimis-fe-admin_js#release/26.04"
+            "npm": "@openimis/fe-admin@https://github.com/nlgfc2024/openimis-fe-admin_js#mw/develop"
         },
         {
             "name": "ToolsModule",
@@ -112,11 +112,11 @@
         },
         {
             "name": "ContributionPlanModule",
-            "npm": "@openimis/fe-contribution_plan@https://github.com/openimis/openimis-fe-contribution_plan_js#release/26.04"
+            "npm": "@openimis/fe-contribution_plan@https://github.com/nlgfc2024/openimis-fe-contribution_plan_js#mw/develop"
         },
         {
             "name": "PaymentCycleModule",
-            "npm": "@openimis/fe-payment_cycle@https://github.com/openimis/openimis-fe-payment_cycle_js#release/26.04"
+            "npm": "@openimis/fe-payment_cycle@https://github.com/nlgfc2024/openimis-fe-payment_cycle_js#mw/develop"
         },
         {
             "name": "ContractModule",
@@ -148,7 +148,7 @@
         },
         {
             "name": "PayrollModule",
-            "npm": "@openimis/fe-payroll@https://github.com/openimis/openimis-fe-payroll_js#release/26.04"
+            "npm": "@openimis/fe-payroll@https://github.com/nlgfc2024/openimis-fe-payroll_js#mw/develop"
         },
         {
             "name": "MsrEtlModule",
