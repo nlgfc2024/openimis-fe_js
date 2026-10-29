@@ -35,3 +35,7 @@ No staging deployment, live browser enrollment, or production configuration upda
 5. Confirm saved district selection restores its name; empty selection sends no district filter. Verify existing-phase and new-phase configuration behavior.
 6. Verify duplicate assignments, ranking and phase-wide capacity with representative staging data; capture real GraphQL responses and enrolled IDs without including sensitive household data in public evidence.
 7. Record the actual deployed revisions, test accounts' scope descriptions, results, remaining failures and reviewer sign-off here before production rollout.
+
+## Hosted CI limitation
+
+The frontend individual SonarCloud run [40872423751](https://github.com/nlgfc2024/openimis-fe-individual_js/actions/runs/40872423751) failed before source analysis: the SONAR_TOKEN environment value is empty and the scanner reports “Not authorized or organization not found.” Repository/SonarCloud credentials must be corrected and the scan rerun. Local test, lint and build results above do not imply hosted CI is green.
