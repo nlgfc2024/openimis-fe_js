@@ -20,11 +20,11 @@
     "modules": [
         {
             "name": "CoreModule",
-            "npm": "@openimis/fe-core@https://github.com/nlgfc2024/openimis-fe-core_js#mw/develop"
+            "npm": "@openimis/fe-core@https://github.com/nlgfc2024/openimis-fe-core_js#858ac3165b8643207504051885e9f686cad2a466"
         },
         {
             "name": "IndividualModule",
-            "npm": "@openimis/fe-individual@https://github.com/nlgfc2024/openimis-fe-individual_js#mw/develop"
+            "npm": "@openimis/fe-individual@https://github.com/nlgfc2024/openimis-fe-individual_js#e7324422f77b062b59f0a6588623a5ec0e9f9842"
         },
         {
             "name": "SocialProtectionModule",
