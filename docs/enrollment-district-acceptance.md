@@ -1,3 +1,5 @@
+> Superseded integration baseline: the historical Individual pins and test results below describe the pre-extraction implementation. The current port lives in the Enrolment modules. See `enrolment-module-integration.md` for the current ownership, configuration, and acceptance gates.
+
 # District enrollment acceptance evidence
 
 Implementation date: 29 October 2026. Base: `mw/develop`.

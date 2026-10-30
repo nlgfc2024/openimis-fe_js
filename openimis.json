@@ -24,15 +24,15 @@
         },
         {
             "name": "IndividualModule",
-            "npm": "@openimis/fe-individual@https://github.com/nlgfc2024/openimis-fe-individual_js#d728d402f3a92e8a9114af0c5a0ce0b328e2e02a"
+            "npm": "@openimis/fe-individual@https://github.com/nlgfc2024/openimis-fe-individual_js#653c54bce296a478996cfae0f82c7a1ee6981f5d"
         },
         {
             "name": "SocialProtectionModule",
-            "npm": "@openimis/fe-social_protection@https://github.com/nlgfc2024/openimis-fe-social_protection_js#mw/develop"
+            "npm": "@openimis/fe-social_protection@https://github.com/nlgfc2024/openimis-fe-social_protection_js#83e84fd7a825aa5a5f114fcc47ec052818b10f18"
         },
         {
             "name": "EnrolmentModule",
-            "npm": "@openimis/fe-enrolment@https://github.com/nlgfc2024/openimis-fe-enrolment_js#mw/develop"
+            "npm": "@openimis/fe-enrolment@https://github.com/nlgfc2024/openimis-fe-enrolment_js#c0bbdb175c3c1a42068880e61f06cddc51dac4ff"
         },
         {
             "name": "ProjectSocialProtectionModule",
