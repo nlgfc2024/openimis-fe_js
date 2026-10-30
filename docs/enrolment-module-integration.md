@@ -2,7 +2,7 @@
 
 The district feature and three household summary counts now belong to the dedicated Enrolment modules. Individual and Social Protection must use compatible post-extraction revisions; do not restore the old enrolment implementations from the Individual feature branches.
 
-The manifest pins the coordinated revisions. Backend summary fields must be deployed before the frontend requesting them. Keep frontend Core's district label revision. Existing assembly PR reviewers are preserved.
+The manifest pins the coordinated revisions. Backend summary fields must be deployed before the frontend requesting them. Use the accepted Core base and the CoreMIS language-pack revision containing the district labels; core PR #26 is superseded by language-pack PR #19. Existing assembly PR reviewers are preserved.
 
 ## Configuration and rollout
 
@@ -24,4 +24,4 @@ Rollback must retain a coordinated module set. Remove stored district operator s
 
 - Backend: https://github.com/nlgfc2024/openimis-be-enrolment_py/pull/2
 - Frontend: https://github.com/nlgfc2024/openimis-fe-enrolment_js/pull/2
-- Shared labels: https://github.com/nlgfc2024/openimis-fe-core_js/pull/26
+- CoreMIS labels: https://github.com/nlgfc2024/openimis-fe-coremis_language_pack_js/pull/19

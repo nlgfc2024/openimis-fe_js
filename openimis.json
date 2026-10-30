@@ -20,7 +20,7 @@
     "modules": [
         {
             "name": "CoreModule",
-            "npm": "@openimis/fe-core@https://github.com/nlgfc2024/openimis-fe-core_js#858ac3165b8643207504051885e9f686cad2a466"
+            "npm": "@openimis/fe-core@https://github.com/nlgfc2024/openimis-fe-core_js#0f8befe2c7b4e14e9a9a2a0ffd2ff1c85ee8ac89"
         },
         {
             "name": "IndividualModule",
@@ -160,7 +160,7 @@
         },
         {
             "name": "CoreMISLanguageModule",
-            "npm": "@openimis/fe-coremis_language_pack@https://github.com/nlgfc2024/openimis-fe-coremis_language_pack_js#mw/develop"
+            "npm": "@openimis/fe-coremis_language_pack@https://github.com/nlgfc2024/openimis-fe-coremis_language_pack_js#77ab677c3c7ce6164a1181ed539f64332468fe09"
         }
     ]
 }
