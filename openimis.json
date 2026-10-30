@@ -31,6 +31,10 @@
             "npm": "@openimis/fe-social_protection@https://github.com/nlgfc2024/openimis-fe-social_protection_js#mw/develop"
         },
         {
+            "name": "EnrolmentModule",
+            "npm": "@openimis/fe-enrolment@https://github.com/nlgfc2024/openimis-fe-enrolment_js#mw/develop"
+        },
+        {
             "name": "ProjectSocialProtectionModule",
             "npm": "@openimis/fe-project_social_protection@https://github.com/nlgfc2024/openimis-fe-project_social_protection_js#mw/develop"
         },
