@@ -160,7 +160,7 @@
         },
         {
             "name": "CoreMISLanguageModule",
-            "npm": "@openimis/fe-coremis_language_pack@https://github.com/nlgfc2024/openimis-fe-coremis_language_pack_js#mw/develop"
+            "npm": "@openimis/fe-coremis_language_pack@https://github.com/nlgfc2024/openimis-fe-coremis_language_pack_js#26.11-jobs-uat.1"
         }
     ]
 }
