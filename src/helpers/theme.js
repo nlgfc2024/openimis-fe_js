@@ -55,7 +55,7 @@ const createAppTheme = (colorOverrides = {}) => {
     typography: {
       useNextVariants: true,
       fontFamily: ["Rubik", "Roboto", '"Helvetica Neue"', "sans-serif"].join(","),
-      fontSize: 14,
+      fontSize: 11,
       fontWeightRegular: 300,
       fontWeightMedium: 400,
       title: {
