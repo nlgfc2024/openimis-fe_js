@@ -10,15 +10,18 @@ module.exports = {
       const localProjectEntry = path.resolve(
         __dirname, "../openimis-fe-project_social_protection_js/dist/index.es.js",
       );
+      const localMappingEntry = path.resolve(__dirname, "../openimis-fe-mapping_js/dist/index.es.js");
       webpackConfig.resolve.alias = {
         ...webpackConfig.resolve.alias,
         "@openimis/fe-project_social_protection$": localProjectEntry,
+        "@openimis/fe-mapping$": localMappingEntry,
       };
       // CRA checks aliased files too. Permit this built entry without removing
       // source-scope checks or allowing the entire neighbouring repository.
       for (const plugin of webpackConfig.resolve.plugins || []) {
         if (plugin.constructor.name === "ModuleScopePlugin") {
           plugin.allowedFiles.add(localProjectEntry);
+          plugin.allowedFiles.add(localMappingEntry);
         }
       }
 

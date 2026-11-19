@@ -157,6 +157,10 @@
         {
             "name": "CoreMISLanguageModule",
             "npm": "@openimis/fe-coremis_language_pack@https://github.com/nlgfc2024/openimis-fe-coremis_language_pack_js#mw/develop"
+        },
+        {
+            "name": "MappingModule",
+            "npm": "@openimis/fe-mapping@file:../openimis-fe-mapping_js"
         }
     ]
 }
