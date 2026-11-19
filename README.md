@@ -1,5 +1,16 @@
 # openIMIS frontend assembly
 
+## Malawi CI (nlgfc2024)
+
+- **`.github/workflows/ci-build.yaml`** builds this frontend, with the modules `openimis.json` pins,
+  on every PR to this hub and on pushes to the Malawi lines.
+- **`.github/workflows/module-ci-build.yml`** is a reusable workflow. Every `nlgfc2024/openimis-fe-*_js`
+  module repo calls it from a short `ci.yml` (`uses: nlgfc2024/openimis-fe_js/.github/workflows/module-ci-build.yml@mw/develop`).
+  It checks out this hub (the branch named like the PR base, else `mw/develop`; never upstream
+  openIMIS), packs the module from the PR, puts it in place of its pin and builds the frontend as
+  the Dockerfile does. Fix FE module CI here, once. No unit tests run; end-to-end tests live in the
+  dist repo.
+
 ## running
 
 this repository builds:
