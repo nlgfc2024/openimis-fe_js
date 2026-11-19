@@ -1,10 +1,26 @@
 const webpack = require("webpack");
+const path = require("path");
 
 module.exports = {
   webpack: {
     configure: (webpackConfig) => {
       // Set publicPath to serve assets under /front/
       webpackConfig.output.publicPath = "/front/";
+      // Consume the local project build while preserving existing package links.
+      const localProjectEntry = path.resolve(
+        __dirname, "../openimis-fe-project_social_protection_js/dist/index.es.js",
+      );
+      webpackConfig.resolve.alias = {
+        ...webpackConfig.resolve.alias,
+        "@openimis/fe-project_social_protection$": localProjectEntry,
+      };
+      // CRA checks aliased files too. Permit this built entry without removing
+      // source-scope checks or allowing the entire neighbouring repository.
+      for (const plugin of webpackConfig.resolve.plugins || []) {
+        if (plugin.constructor.name === "ModuleScopePlugin") {
+          plugin.allowedFiles.add(localProjectEntry);
+        }
+      }
 
       // Inject environment variables explicitly
       webpackConfig.plugins.push(
