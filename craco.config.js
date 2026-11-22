@@ -1,3 +1,4 @@
+const path = require("path");
 const webpack = require("webpack");
 
 module.exports = {
@@ -5,6 +6,30 @@ module.exports = {
     configure: (webpackConfig) => {
       // Set publicPath to serve assets under /front/
       webpackConfig.output.publicPath = "/front/";
+
+      // Local modules are linked during development. Always resolve shared React
+      // packages from the host application: linked modules can otherwise bundle
+      // their own React copy, which breaks hooks and provider contexts.
+      webpackConfig.resolve.alias = {
+        ...webpackConfig.resolve.alias,
+        react: path.resolve(__dirname, "node_modules/react"),
+        "react-dom": path.resolve(__dirname, "node_modules/react-dom"),
+        "react-redux": path.resolve(__dirname, "node_modules/react-redux"),
+        "react-intl": path.resolve(__dirname, "node_modules/react-intl"),
+      };
+
+      const sharedPackagePaths = [
+        "react",
+        "react-dom",
+        "react-redux",
+        "react-intl",
+      ].map((packageName) => path.resolve(__dirname, `node_modules/${packageName}`));
+      const moduleScopePlugin = webpackConfig.resolve.plugins?.find(
+        (plugin) => plugin.constructor.name === "ModuleScopePlugin",
+      );
+      if (moduleScopePlugin) {
+        moduleScopePlugin.allowedPaths.push(...sharedPackagePaths);
+      }
 
       // Inject environment variables explicitly
       webpackConfig.plugins.push(
