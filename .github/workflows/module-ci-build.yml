@@ -1,95 +1,102 @@
-name: Automated CI Build
-# This workflow runs automatically for every commit on GitHub to check syntax and build the frontend.
+name: Malawi FE module build
+# Reusable workflow called by every nlgfc2024/openimis-fe-*_js module repo (see their ci.yml).
+#
+# It builds the Malawi frontend (nlgfc2024/openimis-fe_js, with the modules its openimis.json
+# pins) the same way the Docker image does, with the module under test packed from the PR
+# head in place of its pinned version. Green means the module builds and the whole Malawi
+# frontend compiles with it. No unit tests are run (end-to-end tests live in the dist repo).
 on:
   workflow_call:
     inputs:
-      branchName:
+      fe_fallback_branch:
+        description: Hub branch used when the hub has no branch matching the PR base / pushed branch
         required: false
         type: string
-        default: 'develop'
+        default: mw/develop
+      # Accepted and ignored, for callers that still pass it.
+      branchName: {required: false, type: string}
+
+env:
+  HUB_REPOSITORY: nlgfc2024/openimis-fe_js
 
 jobs:
   build_frontend:
-    name: Build Frontend
-    runs-on: ubuntu-latest
+    name: Build Malawi frontend with this module
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
     steps:
       - uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version: '20'   # same as the hub Dockerfile
 
-      - name: Pull openIMIS Frontend
+      - name: Choose the hub branch
+        env:
+          EVENT: ${{ github.event_name }}
+          PR_BASE_REF: ${{ github.event.pull_request.base.ref }}
+          PUSHED_REF: ${{ github.ref_name }}
+          FALLBACK: ${{ inputs.fe_fallback_branch }}
         run: |
-          # Determine the source and target branches
-          if [ "${{ github.event_name }}" == "pull_request" ]; then
-            SOURCE_BRANCH="${{ github.event.pull_request.head.ref }}"
-            TARGET_BRANCH="${{ github.event.pull_request.base.ref }}"
+          # The hub branch named like the PR base (or the pushed branch), else the fallback.
+          # Never upstream openimis: that would build against the wrong module pins.
+          if [[ "$EVENT" == pull_request* ]]; then WANTED="$PR_BASE_REF"; else WANTED="$PUSHED_REF"; fi
+          if [[ -n "$WANTED" ]] && git ls-remote --exit-code --heads "https://github.com/$HUB_REPOSITORY.git" "refs/heads/$WANTED" > /dev/null; then
+            HUB_BRANCH="$WANTED"
           else
-            SOURCE_BRANCH="${{ github.ref_name }}"
-            TARGET_BRANCH="develop"
+            HUB_BRANCH="$FALLBACK"
           fi
-      
-          # Use 'develop' as fallback if SOURCE_BRANCH or TARGET_BRANCH is empty
-          if [[ -z "$SOURCE_BRANCH" ]]; then
-            SOURCE_BRANCH="develop"
-          fi
-          if [[ -z "$TARGET_BRANCH" ]]; then
-            TARGET_BRANCH="develop"
-          fi
-      
-          echo "Source branch: $SOURCE_BRANCH"
-          echo "Target branch: $TARGET_BRANCH"
-      
-          # Clone the repository with source branch, fall back to target branch if source doesn't exist
-          rm -rf ./openimis-fe
-          if git ls-remote --heads https://github.com/openimis/openimis-fe_js.git "$SOURCE_BRANCH" | grep -q "$SOURCE_BRANCH"; then
-            echo "Cloning source branch: $SOURCE_BRANCH"
-            git clone --depth=1 --branch="$SOURCE_BRANCH" https://github.com/openimis/openimis-fe_js.git ./openimis-fe
-          else
-            echo "Source branch $SOURCE_BRANCH not found, falling back to $TARGET_BRANCH"
-            git clone --depth=1 --branch="$TARGET_BRANCH" https://github.com/openimis/openimis-fe_js.git ./openimis-fe || {
-              echo "Failed to clone $TARGET_BRANCH, falling back to develop"
-              git clone --depth=1 --branch=develop https://github.com/openimis/openimis-fe_js.git ./openimis-fe
-            }
-          fi
-      
-          # Verify the cloned branch
-          cd ./openimis-fe
-          CLONED_BRANCH=$(git rev-parse --abbrev-ref HEAD)
-          echo "Cloned branch: $CLONED_BRANCH"
-      - name: Copy Current branch
+          echo "HUB_BRANCH=$HUB_BRANCH" >> "$GITHUB_ENV"
+          echo "Wanted hub branch '$WANTED', using '$HUB_BRANCH'"
+
+      - name: Check out the hub
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0
-          path: './current-module'
+          repository: ${{ env.HUB_REPOSITORY }}
+          ref: ${{ env.HUB_BRANCH }}
+          path: openimis-fe
 
-      - name: Update the configuration
+      - name: Check out the module under test
+        uses: actions/checkout@v4
+        with:
+          path: current-module
+
+      - name: Build and pack the module
+        working-directory: ./current-module
+        run: |
+          npm install --include=dev --legacy-peer-deps
+          # npm pack runs the module's prepare/build script, like a git install does.
+          TARBALL=$(npm pack --silent | tail -1)
+          test -f "$TARBALL"
+          echo "TARBALL=$TARBALL" >> "$GITHUB_ENV"
+          echo "PACKAGE_NAME=$(jq -r .name package.json)" >> "$GITHUB_ENV"
+          echo "MODULE_NAME=$(grep -oP 'export\s+(?:const\s+)?\K\w+Module(?=\s*=)' src/index.js | head -1)" >> "$GITHUB_ENV"
+
+      - name: Use the module under test in openimis.json
         working-directory: ./openimis-fe
         run: |
-          sudo apt-get update
-          sudo apt-get install jq
-          PACKAGE_NAME=$(jq -r '.name' ../current-module/package.json)
-          echo "PACKAGE_NAME=$PACKAGE_NAME" >> $GITHUB_ENV
-          export MODULE_NAME=$(grep -oP 'export\s+(?:const)?\s+\K\w+Module(?=\s+=)' ../current-module/src/index.js)
-          echo "MODULE_NAME=$MODULE_NAME" >> $GITHUB_ENV
-          
-          # Add or replace MODULE_NAME module in openimis.json (local version)
-          jq --arg name "$MODULE_NAME" --arg npm_val "$PACKAGE_NAME@file:../current-module" 'if [.modules[].name == $name] | max then (.modules[] | select(.name == $name) | .npm) = $npm_val else .modules |= . + [{name: $name, npm: $npm_val}] end' openimis.json > temp.json && mv temp.json openimis.json
+          jq --arg pkg "$PACKAGE_NAME" --arg name "$MODULE_NAME" --arg npm "$PACKAGE_NAME@file:../current-module/$TARBALL" '
+            if any(.modules[]; .npm | startswith($pkg + "@"))
+            then (.modules[] | select(.npm | startswith($pkg + "@")) | .npm) = $npm
+            else .modules += [{name: $name, npm: $npm}] end' openimis.json > openimis.json.new
+          mv openimis.json.new openimis.json
+          jq -c --arg pkg "$PACKAGE_NAME" '.modules[] | select(.npm | startswith($pkg + "@"))' openimis.json
 
-      - name: Check package.json
+      - name: Build the frontend (as the Dockerfile does)
         working-directory: ./openimis-fe
+        env:
+          # The Docker build does not treat lint warnings as errors; neither does this check.
+          CI: false
         run: |
           npm run check-package
-          # install without openimis modules
+          npm run load-config
           npm install --include=dev --legacy-peer-deps
+          npm run build
+          test -f build/index.html
 
-      - name: Prepare openIMIS Dependencies
-        working-directory: ./openimis-fe
-        run: npm run load-config
-
-      - name: Install dependencies
-        working-directory: ./openimis-fe
-        run: npm install --include=dev --legacy-peer-deps
-
-      - name: Build
-        working-directory: ./openimis-fe
-        run: npm run build
+      - name: Summary
+        if: always()
+        run: |
+          {
+            echo "### $PACKAGE_NAME frontend build"
+            echo "- Hub: \`$HUB_REPOSITORY@$HUB_BRANCH\` ($(git -C openimis-fe rev-parse --short HEAD))"
+            echo "- Module: \`$GITHUB_REPOSITORY\` ($(git -C current-module rev-parse --short HEAD)), packed as \`$TARBALL\`"
+          } >> "$GITHUB_STEP_SUMMARY"
