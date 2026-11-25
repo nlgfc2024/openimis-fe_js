@@ -28,7 +28,7 @@
         },
         {
             "name": "SocialProtectionModule",
-            "npm": "@openimis/fe-social_protection@https://github.com/nlgfc2024/openimis-fe-social_protection_js#mw/develop"
+            "npm": "@openimis/fe-social_protection@file:../openimis-fe-social_protection_js"
         },
         {
             "name": "ProjectSocialProtectionModule",
