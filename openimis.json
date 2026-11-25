@@ -159,8 +159,12 @@
             "npm": "@openimis/fe-msr_etl@https://github.com/nlgfc2024/openimis-fe-msr_etl_js#26.11-uat.6"
         },
         {
+            "name": "AppraisalModule",
+            "npm": "@openimis/fe-appraisal@https://github.com/nlgfc2024/openimis-fe-appraisal_js#26.11-umep-uat.4"
+        },
+        {
             "name": "CoreMISLanguageModule",
-            "npm": "@openimis/fe-coremis_language_pack@https://github.com/nlgfc2024/openimis-fe-coremis_language_pack_js#26.11-umep-uat.3"
+            "npm": "@openimis/fe-coremis_language_pack@https://github.com/nlgfc2024/openimis-fe-coremis_language_pack_js#26.11-umep-uat.4"
         }
     ]
 }
